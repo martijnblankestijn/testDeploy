@@ -17,7 +17,7 @@ dependencies:
     - sbt sbt-version
   override:
     - sbt compile
- test:
+test:
   override:
      - sbt test
 #    post:
