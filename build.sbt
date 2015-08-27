@@ -34,10 +34,17 @@ libraryDependencies ++= Seq(
 
   // Angular-specific.
 
-  "org.webjars" % "angularjs" % "1.4.3-1"
+  "org.webjars" % "angularjs" % "1.4.3-1",
   // -------------------------------------------------------------------------
   //"org.webjars"           % "jasmine"                    % "2.1.3" % "test"
 
+  // mohiva and codingwell needed for silhouette
+  "com.mohiva" %% "play-silhouette" % "3.0.0",
+  "net.codingwell" %% "scala-guice" % "4.0.0",
+  "net.ceedubs" %% "ficus" % "1.1.2",
+
+
+  "com.mohiva" %% "play-silhouette-testkit" % "3.0.0" % "test"
 )
 JsEngineKeys.engineType := JsEngineKeys.EngineType.Node
 
