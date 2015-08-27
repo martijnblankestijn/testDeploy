@@ -16,7 +16,7 @@ libraryDependencies ++= Seq(
   ws,
  // specs2 % Test,
 "com.typesafe.slick"   %% "slick"                      % "3.0.2",
-"org.xerial"            % "sqlite-jdbc"                % "3.7.2"
+"org.xerial"            % "sqlite-jdbc"                % "3.7.2",
 // -------------------------------------------------------------------------
 // Web Jars
 //"org.webjars"           % "bootstrap"                  % "3.3.2-2",
@@ -36,6 +36,9 @@ libraryDependencies ++= Seq(
 //"org.webjars"           % "angularjs"                  % "1.3.14",
 // -------------------------------------------------------------------------
 //"org.webjars"           % "jasmine"                    % "2.1.3" % "test"
+
+
+  "junit" % "junit" % "4.10" % "test"
 
 )
 //import TraceurKeys._
