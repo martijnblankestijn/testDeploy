@@ -1,5 +1,6 @@
 // The Play plugin
 addSbtPlugin("com.typesafe.play" % "sbt-plugin" % "2.4.2")
+logLevel := Level.Debug
 
 // web plugins
 
@@ -16,6 +17,7 @@ addSbtPlugin("com.typesafe.play" % "sbt-plugin" % "2.4.2")
 //addSbtPlugin("com.typesafe.sbt" % "sbt-mocha" % "1.1.0")
 
 addSbtPlugin("com.arpnetworking" % "sbt-typescript" % "0.1.5")
+
 resolvers += "typesafe-bintray" at "http://dl.bintray.com/typesafe/maven-releases"
 
 
