@@ -1,4 +1,8 @@
-This is your new Play application
+Play - Typescript - Angular
 =================================
 
-This file will be packaged with your application, when using `activator dist`.
+A port of https://github.com/tastejs/todomvc/tree/master/examples/typescript-angular to Play and sbt.
+
+Todo
+- the whole generated js file is not packaged with sbt stage
+- the path of the generated js file is hard coded
