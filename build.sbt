@@ -34,9 +34,15 @@ libraryDependencies ++= Seq(
 
   // Angular-specific.
 
-  "org.webjars" % "angularjs" % "1.4.3-1"
+  "org.webjars" % "angularjs" % "1.4.3-1",
   // -------------------------------------------------------------------------
   //"org.webjars"           % "jasmine"                    % "2.1.3" % "test"
+
+  "net.codingwell" %% "scala-guice" % "4.0.0",
+
+  // database
+  "org.postgresql" % "postgresql" % "9.4-1201-jdbc41",
+  "com.zaxxer" % "HikariCP-java6" % "2.3.2"
 
 )
 JsEngineKeys.engineType := JsEngineKeys.EngineType.Node
