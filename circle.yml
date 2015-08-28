@@ -15,6 +15,10 @@ dependencies:
     - chmod u+x $HOME/bin/sbt
     - which sbt
     - sbt sbt-version
-# test:
+  override:
+    - sbt compile
+test:
+  override:
+     - sbt test
 #    post:
 #      - sbt it:test
