@@ -1,12 +1,11 @@
 @()
-<!doctype html>
+<!doctype jsApp>
 <html lang="en" ng-app="todomvc" data-framework="typescript">
 <head>
     <meta charset="utf-8">
     <title>Typescript & AngularJS • TodoMVC</title>
     <link rel="stylesheet" href='@routes.Assets.versioned("javascripts/lib/todomvc-common/base.css")'>
     <link rel="stylesheet" href='@routes.Assets.versioned("stylesheets/todomvc-app-css/index.css")'>
-    <link rel="stylesheet" href="node_modules/todomvc-app-css/index.css">
     <style>[ng-cloak] { display: none; }</style>
 </head>
 <body>
@@ -61,9 +60,6 @@
         <a href="http://zamboch.blogspot.com">Pavel Savara</a>
     </p>
 </footer>
-    <script src='@routes.Assets.versioned("javascripts/lib/todomvc-common/base.js")'></script>
-    <!--script type='text/javascript' src='@routes.Assets.versioned("lib/angularjs/angular.js")'></script -->
-    <script type='text/javascript' src='/assets/lib/angularjs/angular.js'></script>
-    <script type='text/javascript' src='@routes.Assets.versioned("javascripts/wholeApp.js")'></script>
+@jsApp()
 </body>
 </html>

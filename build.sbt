@@ -1,5 +1,4 @@
 name := """testdeploy"""
-
 version := "0.1"
 
 lazy val root = (project in file(".")).enablePlugins(PlayScala, SbtWeb)
@@ -45,8 +44,6 @@ import TypescriptKeys._
 import SbtWeb.autoImport._
 import WebKeys._
 sourceMap := true
-outFile := "target/web/public/main/javascripts/wholeApp.js"
-//outDir := ((webTarget in Assets).value / "typescript").absolutePath
 
 resolvers += "scalaz-bintray" at "http://dl.bintray.com/scalaz/releases"
 
