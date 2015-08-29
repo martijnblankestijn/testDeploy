@@ -2,11 +2,11 @@ package controllers
 
 import javax.inject.Inject
 
-import models.UserDAO
+import models.{UserDAO, Users}
 import play.api.mvc._
-import play.twirl.api.HtmlFormat
+import slick.lifted.TableQuery
+import slick.driver.PostgresDriver.api._
 
-import scala.concurrent.Future
 import scala.concurrent.ExecutionContext.Implicits.global
 
 class Application @Inject()(userdao: UserDAO) extends Controller {
@@ -16,6 +16,8 @@ class Application @Inject()(userdao: UserDAO) extends Controller {
   }
 
   def todo = Action.async {
+    val schema = TableQuery[Users].schema
+    schema.create.statements.foreach(println)
     userdao.all.map(users => Ok(views.html.todo(users)))
   }
 }
