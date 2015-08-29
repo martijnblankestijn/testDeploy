@@ -11,14 +11,12 @@ ${thisDir}/build.sh .
 ${thisDir}/run.sh
 
 # Postgres does not start instantaneously, so we have to wait a bit before prepping the DB
-#while [[ $VERSION != ReleaseVersion* ]]
-#do
+while [[ $VERSION != *PostgreSQL* ]]
+do
     echo "Sleeping";
     sleep 1;
-#    VERSION=$(docker exec postgres su postgres; pg_ctl status)
-#    VERSION=$(docker exec postgres su - postgres; cat $DATADIR/postmaster.pid)
-#    VERSION=$(docker exec postgres psql -h "$POSTGRES_PORT_5432_TCP_ADDR" -p "$POSTGRES_PORT_5432_TCP_PORT" -U postgres)
-#done
+    VERSION=$(docker exec postgres psql -h localhost -U postgres -c 'SELECT version()')
+done
 
 # Prep the DB, create user and database
 ${thisDir}/prepdb.sh
