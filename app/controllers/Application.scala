@@ -6,7 +6,6 @@ import models.{UserDAO, Users}
 import play.api.mvc._
 import slick.lifted.TableQuery
 import slick.driver.PostgresDriver.api._
-
 import scala.concurrent.ExecutionContext.Implicits.global
 
 class Application @Inject()(userdao: UserDAO) extends Controller {

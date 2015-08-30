@@ -11,12 +11,15 @@ scalacOptions ++= Seq("-deprecation", "-feature", "-unchecked")
 
 
 libraryDependencies ++= Seq(
-  jdbc,
+  evolutions,
   cache,
   ws,
    specs2 % Test,
   "com.typesafe.slick" %% "slick" % "3.0.2",
-  "org.xerial" % "sqlite-jdbc" % "3.7.2",
+  "com.typesafe.play" %% "play-slick" % "1.0.1",
+  "com.typesafe.play" %% "play-slick-evolutions" % "1.0.1",
+
+//  "org.xerial" % "sqlite-jdbc" % "3.7.2",
   // -------------------------------------------------------------------------
   // Web Jars
   //"org.webjars"           % "bootstrap"                  % "3.3.2-2",
@@ -41,8 +44,8 @@ libraryDependencies ++= Seq(
   "net.codingwell" %% "scala-guice" % "4.0.0",
 
   // database
-  "org.postgresql" % "postgresql" % "9.4-1201-jdbc41",
-  "com.zaxxer" % "HikariCP-java6" % "2.3.2"
+  "org.postgresql" % "postgresql" % "9.4-1201-jdbc41"
+  // "com.zaxxer" % "HikariCP-java6" % "2.3.2"
 
 )
 JsEngineKeys.engineType := JsEngineKeys.EngineType.Node

@@ -3,10 +3,11 @@ package models
 import java.sql.Date
 import javax.inject.Inject
 
-import com.typesafe.config.Config
+import play.api.db.slick.DatabaseConfigProvider
+import slick.driver.JdbcProfile
 import slick.driver.PostgresDriver.api._
+
 import scala.concurrent.Future
-import scala.concurrent.ExecutionContext.Implicits.global
 
 case class User(id: Option[Long] = None, name: String, firstname: String,    email: String,
                 password: String, birthday: Option[Date] = None,
@@ -37,8 +38,13 @@ class Users(tag: Tag) extends Table[User](tag, "user") {
     .tupled, User.unapply _)
 }
 
-class UserDAO @Inject()(config: Config, db: Database) {
+  class UserDAO @Inject()(dbConfigProvider: DatabaseConfigProvider)  {
+
+  val dbConfig = dbConfigProvider.get[JdbcProfile]
+  // TODO why this strange import, couldn't his be  regular import ?
+  import dbConfig.driver.api._
+
   private val users = TableQuery[Users]
 
-  def all: Future[Seq[User]] = db.run(users.result)
+  def all: Future[Seq[User]] = dbConfig.db.run(users.result)
 }
