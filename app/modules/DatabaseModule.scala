@@ -31,7 +31,7 @@ class DatabaseModule extends AbstractModule with ScalaModule {
 //@Singleton
 class DatabaseProvider( configuration: Config, lifecycle: ApplicationLifecycle) extends Provider[slick.jdbc.JdbcBackend.Database] {
 
-  private val db = slick.jdbc.JdbcBackend.Database.forConfig("db.default", configuration)
+  private val db = slick.jdbc.JdbcBackend.Database.forConfig("database", configuration)
 
   lifecycle.addStopHook { () =>
     Future.successful(db.close())
